@@ -52,11 +52,11 @@ void setup() {
  
   jumpper1Read = digitalRead(jumpper1Pin);
   jumpper2Read = digitalRead(jumpper2Pin);
-
-  if(jumpper1Read && jumpper2Read)  mode = 0;
+  
+  if(jumpper1Read && jumpper2Read)  mode = 3;
   if(!jumpper1Read && jumpper2Read) mode = 1;
   if(jumpper1Read && !jumpper2Read) mode = 2;
-  if(!jumpper1Read && !jumpper2Read) mode = 3;
+  if(!jumpper1Read && !jumpper2Read) mode = 0;
 
 
 
