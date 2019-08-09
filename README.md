@@ -1,4 +1,4 @@
-#SOCD Cleaner (Mode Changer VER)
+# SOCD Cleaner (Mode Changer VER)
 
 _________________________________
 
@@ -23,20 +23,20 @@ _______________________________
 
 ### Mode 
 
-##### - Mode 0 (RAW output Mode)
+##### - MODE 0 (RAW output Mode)
 not Jump anything or (D10Jump & D14Jump)
 
 Up + Down -> Up + DOWN
 LEFT + RIGHT -> LEFT + RIGHT
 
-##### - MOde 1 (SOCD cleaner MODE)
+##### - MODE 1 (SOCD cleaner MODE)
 
 Connect D10 pin to Gnd pin
 
 Up + Down -> UP
 LEFT + RIGHT -> Neutral (no output)
 
-##### - MOde 2 (LAST Command MODE)
+##### - MODE 2 (LAST Command MODE)
 
 Connect D14 pin to Gnd pin
 
