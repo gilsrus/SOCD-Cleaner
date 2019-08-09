@@ -26,17 +26,17 @@ D10(jump to gnd) - Mode 1 (SOCD cleaner MODE)
 
 D14(jump to gnd) - Mode 2 (LAST command MODE)
 
-D10Jump & D14Jump - Mode 3 (SOCD + LAST commandMODE)
+not Jump anything  - Mode 3(SOCD + LAST commandMODE)
 
-not Jump anything  - Mode 0 (RAWoutput MODE)
+D10Jump & D14Jump - Mode 0  (RAWoutput MODE)
+
 
 _______________________________
 
 ### Mode 
 
 ##### - MODE 0 (RAW output Mode)
-not Jump anything
-
+D10Jump & D14Jump
 
 Up + Down -> Up + DOWN
 
@@ -68,9 +68,7 @@ RIGHT + LEFT -> LEFT
 
 ##### - MODE 3 (SOCD Cleaner + LAST Command MODE)
 
-Connect D10 pin to Gnd Pin
-Connect D14 pin to Gnd pin
-
+not Jump anything
 
 Up + DOWN -> UP
 
