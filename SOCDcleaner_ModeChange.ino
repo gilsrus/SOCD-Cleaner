@@ -3,10 +3,11 @@ const uint8_t downIN = 3;
 const uint8_t leftIN = 4;
 const uint8_t rightIN = 5;
 
-const uint8_t leftOUT = 6;
-const uint8_t rightOUT = 7;
-const uint8_t upOUT = 8;
-const uint8_t downOUT = 9;
+
+const uint8_t upOUT = 6;
+const uint8_t downOUT = 7;
+const uint8_t leftOUT = 8;
+const uint8_t rightOUT = 9;
 
 const uint8_t jumpper1Pin = 10;
 const uint8_t jumpper2Pin = 14;
