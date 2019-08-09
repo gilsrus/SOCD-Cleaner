@@ -3,11 +3,10 @@ const uint8_t downIN = 3;
 const uint8_t leftIN = 4;
 const uint8_t rightIN = 5;
 
-const uint8_t upOUT = 6;
-const uint8_t downOUT = 7;
-const uint8_t leftOUT = 8;
-const uint8_t rightOUT = 9;
-
+const uint8_t leftOUT = 6;
+const uint8_t rightOUT = 7;
+const uint8_t upOUT = 8;
+const uint8_t downOUT = 9;
 
 const uint8_t jumpper1Pin = 10;
 const uint8_t jumpper2Pin = 14;
@@ -57,6 +56,7 @@ void setup() {
   if(jumpper1Read && jumpper2Read)  mode = 0;
   if(!jumpper1Read && jumpper2Read) mode = 1;
   if(jumpper1Read && !jumpper2Read) mode = 2;
+  if(!jumpper1Read && !jumpper2Read) mode = 3;
 
 
 
@@ -84,6 +84,10 @@ void loop() {
 
   case 2:
     outputLASTCOMMAND();
+    break;
+
+  case 3:
+    outputLASTCOMMANDnSODC();
     break;
 
   default:
@@ -213,6 +217,84 @@ if(downRead) {
 
 }  
 
+if(!leftRead){
+  if(!leftPreviousState){
+    leftPreviousMillis = currentMillis;
+    leftPreviousState = HIGH;
+  }
+  if(!rightRead){
+    if(leftPreviousMillis > rightPreviousMillis){
+      digitalWrite(leftOUT,LOW);
+    }
+    else
+    {
+      digitalWrite(leftOUT,HIGH);
+    }
+    
+  }
+ else
+ {
+   digitalWrite(leftOUT,LOW);
+ }
+}
+
+
+if(leftRead) {
+  leftPreviousState = LOW;
+  digitalWrite(leftOUT,HIGH);
+
+}  
+if(!rightRead){
+  if(!rightPreviousState){
+    rightPreviousMillis = currentMillis;
+    rightPreviousState = HIGH;
+  }
+  if(!leftRead){
+    if(rightPreviousMillis > leftPreviousMillis){
+      digitalWrite(rightOUT,LOW);
+    }
+    else
+    {
+      digitalWrite(rightOUT,HIGH);
+    }
+    
+  }
+ else
+ {
+   digitalWrite(rightOUT,LOW);
+ }
+}
+
+
+if(rightRead) {
+  rightPreviousState = LOW;
+  digitalWrite(rightOUT,HIGH);
+
+}  
+
+}
+
+void outputLASTCOMMANDnSODC(){
+
+ if (!upRead)
+  {
+    digitalWrite(downOUT, HIGH);
+    digitalWrite(upOUT, LOW);
+  }
+  else if (!downRead)
+  {
+    {
+      digitalWrite(downOUT, LOW);
+      digitalWrite(upOUT, HIGH);
+    }
+  }
+  else
+  {
+    digitalWrite(upOUT, HIGH);
+    digitalWrite(downOUT, HIGH);
+  }
+
+  
 if(!leftRead){
   if(!leftPreviousState){
     leftPreviousMillis = currentMillis;
